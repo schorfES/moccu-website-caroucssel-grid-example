@@ -1,0 +1,13 @@
+{
+  "name": "moccu-grid-slider-example",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "sass": "^1.26.10"
+  },
+  "dependencies": {
+    "caroucssel": "^0.6.0",
+    "normalize.css": "^8.0.1"
+  }
+}

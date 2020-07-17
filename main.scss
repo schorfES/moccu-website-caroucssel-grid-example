@@ -1,0 +1,76 @@
+@import 'normalize.css';
+@import '~caroucssel/dist/caroucssel';
+
+.factcards {
+	font-size: 15vw;
+	max-width: 1280px;
+	margin: 0 auto;
+
+	&,
+	> div,
+	> div > div,
+	> div > div > div {
+		height: min-content !important;
+	}
+
+	&.slideshow .slider {
+		@include caroucssel();
+		@include caroucssel-snap($at: 100%);
+		display: grid;
+		position: relative;
+		grid-auto-flow: column;
+		grid-auto-columns: 1em;
+		grid-template-rows: repeat(2, 1em);
+		grid-gap: 0.25em;
+	}
+
+	&-item {
+		position: relative;
+		background-color: lightgrey;
+
+		&.size-two-two {
+			grid-column: span 2;
+			grid-row: span 2;
+
+			.fact-number {
+				font-size: 0.8em;
+			}
+
+			.fact-connecting-text,
+			.fact-name {
+				font-size: 0.175em;
+			}
+		}
+
+		&.size-two-one {
+			grid-column: span 2;
+			grid-row: span 1;
+		}
+
+		&.size-one-one {
+			grid-column: span 1;
+			grid-row: span 1;
+		}
+	}
+
+	.pagination {
+		margin-top: 4rem;
+		display: flex;
+
+		button {
+			cursor: pointer;
+			display: block;
+			width: 100%;
+			height: 0.5rem;
+			outline: none;
+			font-size: 0;
+			border: 0;
+			border-radius: 0;
+			background-color: #eee;
+
+			&:disabled {
+				background-color: red;
+			}
+		}
+	}
+}
